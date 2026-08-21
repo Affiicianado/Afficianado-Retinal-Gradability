@@ -1,0 +1,34 @@
+# ==============================================================================
+# Retina Gradability Prediction System - Requirements
+# ==============================================================================
+
+# Core Deep Learning & ML
+tensorflow>=2.16.0
+scikit-learn>=1.3.0
+lightgbm>=4.0.0
+
+# Computer Vision & Image Preprocessing
+opencv-python>=4.8.0
+pillow>=10.0.0
+scikit-image>=0.21.0
+
+# Data Handling & Storage
+numpy>=1.26.0,<2.0.0
+pandas>=2.0.0
+pyarrow>=14.0.0
+
+# Visualization & Utilities
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+
+# MLOps & Tracking
+mlflow>=2.10.0
+
+# Web UI & API Deployment
+gradio>=4.0.0
+fastapi>=0.100.0
+uvicorn>=0.22.0
+
+# Testing
+pytest>=7.4.0

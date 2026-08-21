@@ -1,0 +1,29 @@
+# .gitignore
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.ipynb_checkpoints/
+
+# data — never commit images
+data/
+*.jpeg
+*.jpg
+*.png
+*.tif
+*.zip
+*.parquet
+
+# models and experiment logs
+*.h5
+*.keras
+*.tflite
+mlruns/
+wandb/
+
+# credentials — SEC will check for these
+kaggle.json
+*.pem
+*.key
+
+retina_env/
