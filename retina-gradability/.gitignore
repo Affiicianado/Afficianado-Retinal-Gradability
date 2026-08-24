@@ -1,27 +1,23 @@
-# .gitignore
+# .gitignore — commit this BEFORE the first push
 __pycache__/
 *.py[cod]
 .venv/
-.env
 .ipynb_checkpoints/
 
-# data — never commit images
+# never commit images
 data/
 *.jpeg
 *.jpg
 *.png
-*.tif
 *.zip
-*.parquet
 
-# models and experiment logs
+# models and logs
 *.h5
 *.keras
 *.tflite
 mlruns/
-wandb/
 
-# credentials — SEC will check for these
+# credentials
 kaggle.json
 *.pem
 *.key
