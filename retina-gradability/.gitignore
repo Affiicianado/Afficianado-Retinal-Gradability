@@ -1,29 +1,37 @@
-# .gitignore
+# ---- Python ----
 __pycache__/
 *.py[cod]
+*.egg-info/
 .venv/
-.env
+venv/
 .ipynb_checkpoints/
 
-# data — never commit images
-data/
-*.jpeg
-*.jpg
-*.png
-*.tif
+# ---- Data ----
+# leading slash = repo root ONLY, so src/data/ stays tracked
+/data/
 *.zip
 *.parquet
 
-# models and experiment logs
+# ---- Images ----
+*.jpg
+*.jpeg
+*.tif
+*.png
+!figures/**/*.png
+!docs/**/*.png
+
+# ---- Models ----
 *.h5
 *.keras
 *.tflite
-mlruns/
-wandb/
+*.pkl
 
-# credentials — SEC will check for these
+# ---- Credentials ----
 kaggle.json
 *.pem
 *.key
+.env
 
-retina_env/
+# ---- OS noise ----
+.DS_Store
+Thumbs.db
