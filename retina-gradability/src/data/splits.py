@@ -1,27 +1,32 @@
 from sklearn.model_selection import GroupShuffleSplit
 
 
-def make_splits(df, val_frac=0.15, test_frac=0.15, seed=SEED):
-    """Assign train / val / test, grouped by patient.
+def split_official(df, val_frac=0.18, seed=SEED, drop_overlap=False):
+    """Honour EyeQ's published train/test partition, then carve a validation
+    set out of train - grouped by patient.
 
-    Two passes: pull out test first, then split the remainder. GroupShuffleSplit
-    guarantees no patient spans a boundary.
+    val_frac=0.18 leaves ~10,285 training images against the 12,543 that
+    published methods used. Note the difference in the report.
+
+    drop_overlap: only needed if cell A6 found patients spanning EyeQ's
+    train/test boundary. Removes them from test to give a leak-free variant.
     """
     df = df.copy().reset_index(drop=True)
+    df["split"] = np.where(df.eyeq_split == "test", "test", "train")
 
-    gss = GroupShuffleSplit(n_splits=1, test_size=test_frac, random_state=seed)
-    rest_i, test_i = next(gss.split(df, groups=df.patient_id))
+    if drop_overlap:
+        spread = df.groupby("patient_id")["eyeq_split"].nunique()
+        bad = set(spread[spread > 1].index)
+        if bad:
+            n = df[(df.split == "test") & (df.patient_id.isin(bad))].shape[0]
+            df = df[~((df.split == "test") & (df.patient_id.isin(bad)))]
+            print(f"dropped {n} test images from {len(bad)} overlapping patients")
 
-    rest = df.iloc[rest_i]
-    gss2 = GroupShuffleSplit(n_splits=1,
-                             test_size=val_frac / (1 - test_frac),
-                             random_state=seed)
-    _, val_i = next(gss2.split(rest, groups=rest.patient_id))
-
-    df["split"] = "train"
-    df.loc[df.index[test_i], "split"] = "test"
-    df.loc[rest.index[val_i], "split"] = "val"
-    return df
+    tr = df[df.split == "train"]
+    gss = GroupShuffleSplit(n_splits=1, test_size=val_frac, random_state=seed)
+    _, val_i = next(gss.split(tr, groups=tr.patient_id))
+    df.loc[tr.index[val_i], "split"] = "val"
+    return df.reset_index(drop=True)
 
 
 def verify_splits(df):
