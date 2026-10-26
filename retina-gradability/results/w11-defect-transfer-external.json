@@ -1,0 +1,34 @@
+{
+  "name": "w11-defect-transfer-external",
+  "when": "2026-10-13T20:43:20",
+  "params": {
+    "lap_var_baseline": 0.12
+  },
+  "metrics": {
+    "deepdrid:defocus_vs_clarity": {
+      "pearson": -0.46894944242838565,
+      "spearman": -0.4693221558449372,
+      "n": 1600,
+      "expected": "negative"
+    },
+    "deepdrid:underexposed_vs_clarity": {
+      "pearson": -0.28348094732235296,
+      "spearman": -0.2130392812719392,
+      "n": 1600,
+      "expected": "negative"
+    },
+    "deepdrid:obstruction_vs_artifact": {
+      "pearson": 0.3068831046691894,
+      "spearman": 0.3900665560721829,
+      "n": 1600,
+      "expected": "positive"
+    },
+    "deepdrid:off_centre_vs_field_def": {
+      "pearson": -0.14374768377899122,
+      "spearman": -0.19897336204646673,
+      "n": 1600,
+      "expected": "negative"
+    }
+  },
+  "notes": ""
+}

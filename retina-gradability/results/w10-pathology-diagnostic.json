@@ -1,0 +1,31 @@
+{
+  "name": "w10-pathology-diagnostic",
+  "when": "2026-10-13T20:07:33",
+  "params": {
+    "n_idrid": 516
+  },
+  "metrics": {
+    "reject_prob_trend": 0.4810328246065111,
+    "defect_trends_vs_grade": {
+      "underexposed": 0.07896437858449391,
+      "defocus": 0.5164900007367675,
+      "obstruction": 0.2672060983519588,
+      "off_centre": 0.11296782176512388
+    },
+    "good_quality_reject_rates": {
+      "drimdb": {
+        "n": 125,
+        "reject_rate": 0.16
+      },
+      "fqs": {
+        "n": 514,
+        "reject_rate": 0.007782101167315175
+      },
+      "idrid": {
+        "n": 516,
+        "reject_rate": 0.06201550387596899
+      }
+    }
+  },
+  "notes": "disentangles lesion-confusion from genuine media opacity and domain shift"
+}

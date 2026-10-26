@@ -1,0 +1,256 @@
+{
+  "name": "w11-generalisation",
+  "when": "2026-10-13T20:43:19",
+  "params": {
+    "eyeq_reference": {
+      "accuracy": 0.8835,
+      "macro_f1": 0.8674,
+      "kappa": 0.8999
+    },
+    "schemes": {
+      "deepdrid": {
+        "n": 1600,
+        "values": [
+          0,
+          2
+        ],
+        "three_class": false,
+        "role": "external"
+      },
+      "drimdb": {
+        "n": 194,
+        "values": [
+          0,
+          2
+        ],
+        "three_class": false,
+        "role": "external"
+      },
+      "fqs": {
+        "n": 2246,
+        "values": [
+          0,
+          1,
+          2
+        ],
+        "three_class": true,
+        "role": "external"
+      },
+      "idrid": {
+        "n": 516,
+        "values": [
+          0
+        ],
+        "three_class": false,
+        "role": "control"
+      }
+    }
+  },
+  "metrics": {
+    "summary": [
+      {
+        "dataset": "EyeQ (internal)",
+        "n": 16249,
+        "scheme": "3-class",
+        "accuracy": 0.8835,
+        "macro_f1": 0.8674,
+        "kappa": 0.8999,
+        "reject_as_good": 0.006,
+        "acc_ci": NaN
+      },
+      {
+        "dataset": "deepdrid",
+        "n": 1600,
+        "scheme": "binary",
+        "accuracy": 0.64375,
+        "macro_f1": 0.6422962696835106,
+        "kappa": 0.2941700926246966,
+        "reject_as_good": 0.0855106888361045,
+        "acc_ci": [
+          0.62125,
+          0.666875
+        ]
+      },
+      {
+        "dataset": "drimdb",
+        "n": 194,
+        "scheme": "binary",
+        "accuracy": 0.8969072164948454,
+        "macro_f1": 0.8932305998899284,
+        "kappa": 0.7887860642351661,
+        "reject_as_good": 0.0,
+        "acc_ci": [
+          0.8505154639175257,
+          0.9381443298969072
+        ]
+      },
+      {
+        "dataset": "fqs",
+        "n": 2246,
+        "scheme": "3-class",
+        "accuracy": 0.6540516473731077,
+        "macro_f1": 0.6617375545479941,
+        "kappa": 0.6888889106427718,
+        "reject_as_good": 0.021321961620469083,
+        "acc_ci": [
+          0.6340160284951024,
+          0.6732079252003562
+        ]
+      },
+      {
+        "dataset": "idrid",
+        "n": 516,
+        "scheme": "control (1 class)",
+        "accuracy": NaN,
+        "macro_f1": NaN,
+        "kappa": NaN,
+        "reject_as_good": NaN,
+        "acc_ci": NaN
+      }
+    ],
+    "per_dataset": {
+      "deepdrid": {
+        "binary_accuracy": 0.64375,
+        "acc_ci": [
+          0.62125,
+          0.666875
+        ],
+        "binary_macro_f1": 0.6422962696835106,
+        "confusion_3x3": [
+          [
+            295,
+            271,
+            192
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            72,
+            306,
+            464
+          ]
+        ],
+        "safety": {
+          "n_reject": 842,
+          "reject_as_good": 0.0855106888361045,
+          "reject_as_gradable": 0.4489311163895487
+        }
+      },
+      "drimdb": {
+        "binary_accuracy": 0.8969072164948454,
+        "acc_ci": [
+          0.8505154639175257,
+          0.9381443298969072
+        ],
+        "binary_macro_f1": 0.8932305998899284,
+        "confusion_3x3": [
+          [
+            65,
+            40,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            69
+          ]
+        ],
+        "safety": {
+          "n_reject": 69,
+          "reject_as_good": 0.0,
+          "reject_as_gradable": 0.0
+        }
+      },
+      "fqs": {
+        "accuracy": 0.6540516473731077,
+        "macro_f1": 0.6617375545479941,
+        "kappa": 0.6888889106427718,
+        "per_class": {
+          "Good": {
+            "precision": 0.6310077519379845,
+            "recall": 0.791828793774319,
+            "f1": 0.7023295944779983,
+            "n": 514
+          },
+          "Usable": {
+            "precision": 0.5209825997952917,
+            "recall": 0.6410579345088161,
+            "f1": 0.5748164878599661,
+            "n": 794
+          },
+          "Reject": {
+            "precision": 0.8862179487179487,
+            "recall": 0.5895522388059702,
+            "f1": 0.708066581306018,
+            "n": 938
+          }
+        },
+        "confusion": [
+          [
+            407,
+            103,
+            4
+          ],
+          [
+            218,
+            509,
+            67
+          ],
+          [
+            20,
+            365,
+            553
+          ]
+        ],
+        "acc_ci": [
+          0.6340160284951024,
+          0.6732079252003562
+        ],
+        "safety": {
+          "n_reject": 938,
+          "reject_as_good": 0.021321961620469083,
+          "reject_as_gradable": 0.41044776119402987
+        }
+      },
+      "idrid": {
+        "single_class": 0,
+        "predicted_rates": {
+          "Good": 0.5426356589147286,
+          "Usable": 0.3953488372093023,
+          "Reject": 0.06201550387596899
+        },
+        "confusion_3x3": [
+          [
+            280,
+            204,
+            32
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "safety": {
+          "n_reject": 0,
+          "reject_as_good": null,
+          "reject_as_gradable": null
+        }
+      }
+    }
+  },
+  "notes": ""
+}

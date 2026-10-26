@@ -1,0 +1,23 @@
+{
+  "name": "w10-idrid-pathology-control",
+  "when": "2026-10-13T20:07:01",
+  "params": {
+    "n": 516
+  },
+  "metrics": {
+    "class_rates": {
+      "Good": 0.5426356589147286,
+      "Usable": 0.3953488372093023,
+      "Reject": 0.06201550387596899
+    },
+    "reject_by_grade": {
+      "0": 0.036,
+      "1": 0.0,
+      "2": 0.065,
+      "3": 0.043,
+      "4": 0.177
+    },
+    "spearman_grade_vs_reject_prob": 0.4810328246065111
+  },
+  "notes": ""
+}
