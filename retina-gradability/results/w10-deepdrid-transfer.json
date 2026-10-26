@@ -1,0 +1,36 @@
+{
+  "name": "w10-deepdrid-transfer",
+  "when": "2026-10-13T20:06:47",
+  "params": {
+    "n": 1600,
+    "lap_var_baseline": 0.12,
+    "head": "mlp256"
+  },
+  "metrics": {
+    "correlations": {
+      "defocus_vs_clarity": {
+        "pearson": -0.46894940959476844,
+        "spearman": -0.4693221558449372,
+        "expected": "negative"
+      },
+      "obstruction_vs_artifact": {
+        "pearson": 0.30688310100777394,
+        "spearman": 0.3900651646409199,
+        "expected": "positive"
+      },
+      "underexposed_vs_clarity": {
+        "pearson": -0.28348095618919644,
+        "spearman": -0.2130392812719392,
+        "expected": "negative"
+      },
+      "off_centre_vs_artifact": {
+        "pearson": 0.06644307629563109,
+        "spearman": 0.10569541255221439,
+        "expected": "positive"
+      }
+    },
+    "defocus_vs_clarity_abs": 0.46894940959476844,
+    "beats_baseline": true
+  },
+  "notes": ""
+}

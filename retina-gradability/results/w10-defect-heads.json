@@ -1,0 +1,47 @@
+{
+  "name": "w10-defect-heads",
+  "when": "2026-10-13T20:06:33",
+  "params": {
+    "backbone": "effnet_b0_best (frozen)",
+    "size": 224,
+    "head": "mlp256",
+    "loss": "mse",
+    "emb_dim": 1280,
+    "val_mse_probe": 0.011409291066229343,
+    "val_mse_mlp": 0.006225698161870241
+  },
+  "metrics": {
+    "per_defect": [
+      {
+        "defect": "underexposed",
+        "n_present": 2089,
+        "MAE_all": 0.067,
+        "MAE_present": 0.13,
+        "AUC_presence": 0.99
+      },
+      {
+        "defect": "defocus",
+        "n_present": 1949,
+        "MAE_all": 0.025,
+        "MAE_present": 0.052,
+        "AUC_presence": 0.999
+      },
+      {
+        "defect": "obstruction",
+        "n_present": 2062,
+        "MAE_all": 0.034,
+        "MAE_present": 0.06,
+        "AUC_presence": 0.995
+      },
+      {
+        "defect": "off_centre",
+        "n_present": 2023,
+        "MAE_all": 0.041,
+        "MAE_present": 0.083,
+        "AUC_presence": 0.996
+      }
+    ],
+    "mean_auc": 0.995
+  },
+  "notes": "heads trained on cached embeddings; synthetic patient-disjoint test split"
+}
