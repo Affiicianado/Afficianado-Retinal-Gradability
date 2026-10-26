@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data never goes in git - it lives in private Kaggle datasets
+/data/
+*.jpeg
+*.jpg
+*.zip
+*.parquet
+*.npy
+eyeq_512/
+external_512/
+degraded/
+cam_eval/
+
+# Models live in Kaggle datasets: retina-models, retina-multihead, retina-deployable
+*.h5
+*.keras
+*.tflite
+
+# Credentials. Nothing in this project needs one
+kaggle.json
+.env
+*.pem
+*.key
