@@ -1,0 +1,6 @@
+# What the screening laptop needs to run deploy/infer_offline.py. No TensorFlow.
+ai-edge-litert==2.3.0      # the TensorFlow Lite interpreter (LiteRT). If it will not
+                           # install on your platform, `pip install tensorflow` instead -
+                           # the script falls back to TensorFlow's bundled interpreter.
+opencv-python-headless>=4.8
+numpy>=1.26
