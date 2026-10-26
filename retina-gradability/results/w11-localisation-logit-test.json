@@ -1,0 +1,37 @@
+{
+  "name": "w11-localisation-logit-test",
+  "when": "2026-10-13T20:44:11",
+  "params": {
+    "grid": 7,
+    "rows": 3,
+    "null": 0.42857142857142855,
+    "cam_batch": 16
+  },
+  "metrics": {
+    "underexposed": {
+      "n": 120,
+      "sigmoid": 0.40877631306648254,
+      "logit": 0.40877628326416016,
+      "verdict": "still flat"
+    },
+    "defocus": {
+      "n": 87,
+      "sigmoid": 0.43008071184158325,
+      "logit": 0.43008071184158325,
+      "verdict": "still flat"
+    },
+    "obstruction": {
+      "n": 69,
+      "sigmoid": 0.4141042232513428,
+      "logit": 0.4141042232513428,
+      "verdict": "still flat"
+    },
+    "off_centre": {
+      "n": 64,
+      "sigmoid": 0.43530088663101196,
+      "logit": 0.43530088663101196,
+      "verdict": "still flat"
+    }
+  },
+  "notes": "post-sigmoid vs pre-activation Grad-CAM on the same weights"
+}
