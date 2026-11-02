@@ -2,5 +2,5 @@
 ai-edge-litert==2.3.0      # the TensorFlow Lite interpreter (LiteRT). If it will not
                            # install on your platform, `pip install tensorflow` instead -
                            # the script falls back to TensorFlow's bundled interpreter.
-opencv-python-headless>=4.8
-numpy>=1.26
+opencv-python-headless>=5.0.0.93
+numpy>=2.5.4
